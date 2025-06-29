@@ -19,7 +19,7 @@ function TextInputFormContainer({ onSubmit }) {
     setValue(event.target.value);
   }
 
-  return  (
+  return (
     <TextInputForm
       handleFormSubmit={handleFormSubmit}
       handleInputChange={handleInputChange}
@@ -28,6 +28,5 @@ function TextInputFormContainer({ onSubmit }) {
       setInputType={setInputType}
     />
   );
-
 }
 export default TextInputFormContainer;
