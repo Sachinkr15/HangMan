@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import MaskedTest from "../../MaskedText/MaskedText";
+import LetterButtons from "../../LetterButtons/LetterButtons";
 
 function PlayGames() {
   return (
@@ -10,7 +11,10 @@ function PlayGames() {
       <MaskedTest text="humble" usedLetters={["b", "e"]} />
 
       <hr />
-
+  
+      <LetterButtons usedLetters={['b' , 'e']}/>
+      <hr />
+     
       <br /> 
       <br />
       
