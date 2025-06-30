@@ -3,12 +3,13 @@ const ALPHABETS = new Array(26)
   .fill("")
   .map((e, index) => String.fromCharCode(index + 65));
 
-function LetterButtons({ usedLetters, onLetterClick }) {
+function LetterButtons({ text, usedLetters, onLetterClick }) {
+    const originalCharacters = new Set(text.toUpperCase().split(""));
   const selectedLetters = new Set(usedLetters.join("").toUpperCase().split(""));
 
   const buttonStyle = function (letter) {
     if (selectedLetters.has(letter)) {
-      return "bg-red-600 border-red-700 hover:bg-red-700 cursor-not-allowed";
+      return `${originalCharacters.has(letter) ? 'border-green-700 bg-green-700' : 'border-[#000] border-4 bg-red-600'} cursor-not-allowed`;
     } else {
       return "bg-blue-600 border-blue-700 hover:bg-blue-700";
     }
@@ -16,7 +17,7 @@ function LetterButtons({ usedLetters, onLetterClick }) {
 
   const handleClick = function (event) {
     const character = event.target.value;
-    console.log("Clicked letter:", character);
+    // console.log("Clicked letter:", character);
     onLetterClick?.(character);
   };
 
